@@ -1,6 +1,7 @@
 #include"ThreadCache.h"
 #include"CentralCache.h"
 
+//调整一下编码
 //从中心缓存获取对象
 void* ThreadCache::GetFromCentralCache(size_t index, size_t size)
 {
