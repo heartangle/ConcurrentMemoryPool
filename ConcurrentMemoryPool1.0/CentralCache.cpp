@@ -76,6 +76,7 @@ void CentralCache::ReleaseListToSpans(void* start, size_t size)
 
 		Span* span = PageCache::GetInstance()->MapObjectToSapn(start);
 		NEXT_OBJ(start) = span->_list;
+		span->_list = start;
 		//当一个span的对象全部回来，将span还给page cache,并且坐页合并
 		if (--span->_usecount == 0)
 		{
